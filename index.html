@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacts Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- GLOBAL SYSTEM SIDEBAR (FAR LEFT) -->
+  <aside class="system-sidebar">
+    <div class="top-system-icons">
+      <div class="sys-icon active-app"><i class="fa-solid fa-table-cells-large"></i></div>
+      <div class="divider">...</div>
+      <div class="sys-icon"><i class="fa-solid fa-box-archive"></i></div>
+      <div class="sys-icon"><i class="fa-regular fa-calendar-days"></i></div>
+      <div class="sys-icon"><i class="fa-solid fa-chart-pie"></i></div>
+      <div class="sys-icon"><i class="fa-solid fa-chart-simple"></i></div>
+      <div class="sys-icon"><i class="fa-solid fa-at"></i></div>
+      <div class="divider">...</div>
+      <div class="sys-icon"><i class="fa-regular fa-user"></i></div>
+      <div class="sys-icon"><i class="fa-regular fa-folder"></i></div>
+      <div class="sys-icon"><i class="fa-regular fa-address-book active-text"></i></div>
+      <div class="sys-icon"><i class="fa-regular fa-envelope"></i></div>
+      <div class="sys-icon"><i class="fa-regular fa-comment-dots"></i></div>
+      <div class="sys-icon"><i class="fa-regular fa-circle-check"></i></div>
+    </div>
+  </aside>
+
+  <!-- MAIN APP CONTAINER -->
+  <div class="app-container">
+    
+    <!-- TOP HEADER -->
+    <header class="app-header">
+      <div class="header-left">
+        <h1 class="logo-text">Contacts</h1>
+        <div class="search-bar-container">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" placeholder="Search Contacts...">
+          <span class="shortcut-badge">Ctrl K</span>
+        </div>
+      </div>
+      <div class="header-right">
+        <button class="icon-btn"><i class="fa-regular fa-circle-question"></i></button>
+        <button class="icon-btn"><i class="fa-solid fa-gear"></i></button>
+        <button class="icon-btn circular-dots-btn"><i class="fa-solid fa-ellipsis"></i></button>
+        <button class="create-btn"><i class="fa-solid fa-plus"></i> Create</button>
+        <div class="user-avatar-container">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop" alt="User profile" class="avatar-img">
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENT BODY (Split columns) -->
+    <main class="app-body">
+      
+      <!-- COLUMN 1: APP NAVIGATION (Acts as Drawer Menu on Mobile) -->
+      <section class="nav-column" id="navColumn">
+        <div class="nav-group">
+          <span class="group-title">My Contacts</span>
+          <a href="#" class="nav-item active"><i class="fa-regular fa-address-book"></i> All Contacts</a>
+          <a href="#" class="nav-item"><i class="fa-regular fa-heart"></i> Favorites</a>
+          <a href="#" class="nav-item"><i class="fa-regular fa-clock"></i> Frequently Contacted</a>
+          <a href="#" class="nav-item"><i class="fa-layer-group fa-solid"></i> Duplicates</a>
+          <a href="#" class="nav-item"><i class="fa-regular fa-trash-can"></i> Deleted Contacts</a>
+        </div>
+
+        <div class="nav-group">
+          <span class="group-title">Groups</span>
+          <a href="#" class="nav-item"><i class="fa-regular fa-folder text-green"></i> Most Important</a>
+          <a href="#" class="nav-item"><i class="fa-regular fa-folder text-orange"></i> Work</a>
+          <a href="#" class="nav-item"><i class="fa-regular fa-folder text-blue"></i> Family</a>
+          <a href="#" class="nav-item"><i class="fa-regular fa-folder text-red"></i> Projects</a>
+          <a href="#" class="nav-item"><i class="fa-regular fa-folder text-purple"></i> Recent Leads</a>
+        </div>
+      </section>
+
+      <!-- COLUMN 2: CONTACTS LIST -->
+      <section class="list-column">
+        <div class="list-header">
+          <div class="list-header-left">
+            <button class="menu-toggle-btn mobile-only-btn" id="listMenuBtn"><i class="fa-solid fa-bars"></i></button>
+            <span>All Contacts</span>
+          </div>
+          <button class="sort-btn"><i class="fa-solid fa-arrow-down-a-z"></i></button>
+        </div>
+        <div class="contacts-list" id="contactsList">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+      <!-- COLUMN 3: CONTACT VIEW / DETAILS -->
+      <section class="details-column" id="detailsColumn">
+        <div class="details-actions">
+          <button class="action-link"><i class="fa-regular fa-pen-to-square"></i> Update</button>
+          <button class="action-link"><i class="fa-regular fa-minus-square"></i> Delete</button>
+        </div>
+
+        <div class="profile-card" id="profileCard">
+          <!-- Dynamic Profile Content loaded here -->
+        </div>
+      </section>
+
+    </main>
+
+    <!-- MOBILE BOTTOM NAVIGATION BAR -->
+    <nav class="mobile-bottom-nav">
+      <button class="nav-bottom-btn" id="bottomMenuBtn"><i class="fa-solid fa-bars"></i></button>
+      <button class="nav-bottom-btn"><i class="fa-regular fa-sun"></i></button>
+      <button class="nav-bottom-btn active-badge"><i class="fa-regular fa-bell"></i></button>
+      <button class="nav-bottom-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <div class="bottom-avatar-container">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop" alt="User profile" class="avatar-img">
+      </div>
+    </nav>
+
+  </div>
+
+  <!-- QUICK ACTION RIGHT BAR (FAR RIGHT - Desktop Only) -->
+  <aside class="right-sidebar">
+    <div class="right-icon-wrapper">
+      <img src="https://flagcdn.com/w40/gb.png" alt="Language" class="flag-icon">
+    </div>
+    <div class="right-icon-wrapper"><i class="fa-solid fa-magnifying-glass"></i></div>
+    <div class="right-icon-wrapper active-badge"><i class="fa-regular fa-bell"></i></div>
+    <div class="right-icon-wrapper"><i class="fa-regular fa-circle-check"></i></div>
+    <div class="right-icon-wrapper theme-toggle"><i class="fa-regular fa-sun"></i></div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
