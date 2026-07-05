@@ -1,64 +1,64 @@
 const contactsData = [
   {
     id: 1,
-    name: "Andre Allison",
-    email: "andre-allison@allison.hn",
+    name: "Arun Sharma",
+    email: "arun.sharma@harvey.in",
     role: "Investor Implementation Analyst, Harvey Inc",
-    mobile: "303-570-0941",
-    home: "543-769-0002",
+    mobile: "98765-43210",
+    home: "011-25437690",
     img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop"
   },
   {
     id: 2,
-    name: "Allion Murphy",
-    email: "allion-murphy@aool.com",
+    name: "Ananya Murthy",
+    email: "ananya.murthy@aool.com",
     role: "Senior Account Executive",
-    mobile: "415-555-2671",
-    home: "415-555-9832",
+    mobile: "91234-56789",
+    home: "022-41555983",
     img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop"
   },
   {
     id: 3,
-    name: "Ann Skinner",
-    email: "ann-skinner@shotmail.com",
+    name: "Amit Desai",
+    email: "amit.desai@shotmail.com",
     role: "Product Manager",
-    mobile: "206-555-0192",
+    mobile: "98110-12345",
     home: "",
     color: "#f59e0b"
   },
   {
     id: 4,
-    name: "Brandon Leonard",
-    email: "brandon-leonard@yahoo.com",
+    name: "Bhavna Patel",
+    email: "bhavna.patel@yahoo.com",
     role: "Data Engineer",
-    mobile: "617-555-0143",
-    home: "617-555-0185",
+    mobile: "94440-56781",
+    home: "044-26175550",
     color: "#10b981"
   },
   {
     id: 5,
-    name: "Boris Ramirez",
-    email: "boris-ramiraz@aahoo.com",
+    name: "Vikram Ramirez",
+    email: "vikram.ramirez@aahoo.com",
     role: "DevOps Consultant",
-    mobile: "512-555-9012",
+    mobile: "98940-11223",
     home: "",
     img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop"
   },
   {
     id: 6,
-    name: "Carmen Erickson",
-    email: "carmen-erickson@aool.com",
+    name: "Deepak Iyer",
+    email: "deepak.iyer@aool.com",
     role: "Operations Coordinator",
-    mobile: "702-555-3810",
-    home: "702-555-7721",
+    mobile: "97890-44556",
+    home: "044-27025557",
     img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop"
   },
   {
     id: 7,
-    name: "Carroll Hunt",
-    email: "carroll-hunt@hunt.hn",
+    name: "Kavita Rao",
+    email: "kavita.rao@rao.in",
     role: "UX/UI Designer",
-    mobile: "212-555-8943",
+    mobile: "96000-88943",
     home: "",
     img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop"
   }
@@ -176,11 +176,9 @@ function setupMobileMenu() {
       navColumn.classList.toggle('mobile-active');
     };
 
-    // Toggle menu through the bottom nav or list header menu icon
     if (bottomMenuBtn) bottomMenuBtn.addEventListener('click', toggleMenu);
     if (listMenuBtn) listMenuBtn.addEventListener('click', toggleMenu);
 
-    // Close menu when clicking outside of it
     document.addEventListener('click', (e) => {
       if (!navColumn.contains(e.target) && e.target !== bottomMenuBtn && e.target !== listMenuBtn) {
         navColumn.classList.remove('mobile-active');
